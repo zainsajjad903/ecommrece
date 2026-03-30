@@ -1,6 +1,8 @@
+import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-
-export default function Product() {
+import { Link } from "react-router-dom";
+import ProductForm from "../Components/productform";
+const Product = () => {
   return (
     <>
       <div>
@@ -488,7 +490,10 @@ export default function Product() {
             </div>
           </div>
         </section>
+        <ProductForm />
+        <Footer />
       </div>
     </>
   );
-}
+};
+export default Product;
