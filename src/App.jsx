@@ -5,15 +5,19 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Product from "./pages/Product";
 import Singleproduct from "./pages/Singleproduct";
+import Navbar from "./Components/Navbar";
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/products" element={<Product />} />
-      <Route path="/singleproduct" element={<Singleproduct />} />
-    </Routes>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/products" element={<Product />} />
+        <Route path="/singleproduct" element={<Singleproduct />} />
+      </Routes>
+    </div>
   );
 };
 
