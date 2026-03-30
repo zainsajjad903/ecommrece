@@ -1,5 +1,7 @@
-import React from "react";
-
 export default function Singleproduct() {
-  return <div></div>;
+  return (
+    <div>
+      <h1>Single Product</h1>
+    </div>
+  );
 }

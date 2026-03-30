@@ -7,15 +7,13 @@ import Product from "./pages/Product";
 import Singleproduct from "./pages/Singleproduct";
 const App = () => {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/products" element={<Product />} />
-        <Route path="/singleproduct" element={<Singleproduct />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/products" element={<Product />} />
+      <Route path="/singleproduct" element={<Singleproduct />} />
+    </Routes>
   );
 };
 
