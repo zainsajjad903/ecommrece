@@ -1,4 +1,5 @@
-export default function Navbar() {
+import { Link } from "react-router-dom";
+const Navbar = () => {
   return (
     <div>
       <header className="header-area header-sticky">
@@ -6,39 +7,39 @@ export default function Navbar() {
           <div className="row">
             <div className="col-12">
               <nav className="main-nav">
-                <a href="index.html" className="logo">
+                <Link to={"/"} className="logo">
                   <img src="assets/images/logo.png" />
-                </a>
+                </Link>
 
                 <ul className="nav">
                   <li className="scroll-to-section">
-                    <a href="#top" className="active">
+                    <Link to={"/"} className="active">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li className="scroll-to-section">
-                    <a href="#men">Men's</a>
+                    <Link to={"/men"}>Men's</Link>
                   </li>
                   <li className="scroll-to-section">
-                    <a href="#women">Women's</a>
+                    <Link to={"/women"}>Women's</Link>
                   </li>
                   <li className="scroll-to-section">
-                    <a href="#kids">Kid's</a>
+                    <Link to={"/kids"}>Kid's</Link>
                   </li>
                   <li className="submenu">
                     <a href="javascript:;">Pages</a>
                     <ul>
                       <li>
-                        <a href="about.html">About Us</a>
+                        <Link to={"/about"}>About Us</Link>
                       </li>
                       <li>
-                        <a href="products.html">Products</a>
+                        <Link to={"/products"}>Products</Link>
                       </li>
                       <li>
-                        <a href="single-product.html">Single Product</a>
+                        <Link to={"/single-product"}>Single Product</Link>
                       </li>
                       <li>
-                        <a href="contact.html">Contact Us</a>
+                        <Link to={"/contact"}>Contact Us</Link>
                       </li>
                     </ul>
                   </li>
@@ -46,27 +47,15 @@ export default function Navbar() {
                     <a href="javascript:;">Features</a>
                     <ul>
                       <li>
-                        <a href="#">Features Page 1</a>
+                        <Link to={"/features/1"}>Features Page 1</Link>
                       </li>
                       <li>
-                        <a href="#">Features Page 2</a>
+                        <Link to={"/features/2"}>Features Page 2</Link>
                       </li>
                       <li>
-                        <a href="#">Features Page 3</a>
-                      </li>
-                      <li>
-                        <a
-                          rel="nofollow"
-                          href="https://templatemo.com/page/4"
-                          target="_blank"
-                        >
-                          Template Page 4
-                        </a>
+                        <Link to={"/features/3"}>Features Page 3</Link>
                       </li>
                     </ul>
-                  </li>
-                  <li className="scroll-to-section">
-                    <a href="#explore">Explore</a>
                   </li>
                 </ul>
                 <a className="menu-trigger">
@@ -79,4 +68,5 @@ export default function Navbar() {
       </header>
     </div>
   );
-}
+};
+export default Navbar;
