@@ -1,6 +1,16 @@
-const Addproduct = () => {
+const Productview = ({ products }) => {
   return (
     <>
+      {products.map((item) => (
+        <div className="col-lg-4" key={item.productId}>
+          <div className="item">
+            <div className="down-content">
+              <h4>{item.productName}</h4>
+              <span>{item.productPrice}</span>
+            </div>
+          </div>
+        </div>
+      ))}
       <div>
         <div className="page-heading" id="top">
           <div className="container">
@@ -481,4 +491,4 @@ const Addproduct = () => {
     </>
   );
 };
-export default Addproduct;
+export default Productview;
