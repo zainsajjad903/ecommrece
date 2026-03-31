@@ -32,9 +32,8 @@ const ProductForm = (props) => {
       productImage: productImage,
     };
 
-    props.onAddProduct(productItem);
+    props.fetchProduct(productItem);
   }
-
   return (
     <>
       <div className="container">
