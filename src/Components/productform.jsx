@@ -2,17 +2,12 @@ import { useState } from "react";
 
 const ProductForm = (props) => {
   let [productName, updateProductName] = useState("");
-  // let [productCategory,updateProductCategory]=useState('')
   let [productPrice, updateProductPrice] = useState("");
   let [productImage, updateProductImage] = useState("");
 
   function getProductName(event) {
     updateProductName(event.target.value);
   }
-
-  // function getProductCategory(event){
-  //     updateProductCategory(event.target.value)
-  // }
 
   function getProductPrice(event) {
     updateProductPrice(event.target.value);
@@ -25,14 +20,20 @@ const ProductForm = (props) => {
   function SaveProduct(event) {
     event.preventDefault();
 
-    let productItem = {
-      productId: 1,
-      productName: productName,
-      productPrice: productPrice,
-      productImage: productImage,
+    const productItem = {
+      productId: Date.now(),
+      productName,
+      productPrice,
+      productImage,
     };
 
-    props.fetchProduct(productItem);
+    if (props.fetchProduct) {
+      props.fetchProduct(productItem);
+    }
+
+    updateProductName("");
+    updateProductPrice("");
+    updateProductImage("");
   }
   return (
     <>

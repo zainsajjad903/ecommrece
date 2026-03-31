@@ -1,5 +1,5 @@
 import React from "react";
-import ProductForm from "./productform";
+import ProductForm from "../Productform";
 
 const Addproduct = (props) => {
   function fetchProduct(Formproduct) {
