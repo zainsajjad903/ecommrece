@@ -2,14 +2,6 @@ const Addproduct = () => {
   return (
     <>
       <div>
-        {/* <header className="header-area header-sticky">
-          <div className="container">
-            <div className="row">
-              <div className="col-12"></div>
-            </div>
-          </div>
-        </header> */}
-
         <div className="page-heading" id="top">
           <div className="container">
             <div className="row">
