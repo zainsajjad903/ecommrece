@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ProductForm = () => {
+const ProductForm = (props) => {
   let [productName, updateProductName] = useState("");
   // let [productCategory,updateProductCategory]=useState('')
   let [productPrice, updateProductPrice] = useState("");
@@ -32,7 +32,7 @@ const ProductForm = () => {
       productImage: productImage,
     };
 
-    console.log(productItem);
+    props.onAddProduct(productItem);
   }
 
   return (
@@ -49,10 +49,7 @@ const ProductForm = () => {
                   onChange={getProductName}
                 />
               </div>
-              {/* <div className="form-group">
-                                <label >Product Category</label>
-                                <input type="text" className="form-control"  onChange={getProductCategory}/>
-                            </div> */}
+
               <div className="form-group">
                 <label>Product Price</label>
                 <input
