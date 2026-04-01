@@ -2,20 +2,18 @@ import { useState } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import ProductForm from "../Components/productform";
-import Productview from "../Components/Productsview";
+import Productview from "../Components/productsview";
 const Product = () => {
-  const [products, setNewProducts] = useState([]);
+  const [products, updateProducts] = useState([]);
 
-  const handleAddProduct = (product) => {
-    console.log("this is product page", product);
-    setNewProducts((prevent) => [...prevent, product]);
-  };
-
+  function getProducts(get_product) {
+    updateProducts(get_product);
+  }
   return (
     <>
       <Navbar />
       <Productview products={products} />
-      <ProductForm fetchProduct={handleAddProduct} />
+      <ProductForm fetchProduct={getProducts} />
 
       <Footer />
     </>

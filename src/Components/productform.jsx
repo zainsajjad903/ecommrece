@@ -14,7 +14,10 @@ const ProductForm = (props) => {
   }
 
   function getProductImage(event) {
-    updateProductImage(event.target.value);
+    const file = event.target.files && event.target.files[0];
+    if (file) {
+      updateProductImage(URL.createObjectURL(file));
+    }
   }
 
   function SaveProduct(event) {
@@ -39,7 +42,7 @@ const ProductForm = (props) => {
     <>
       <div className="container">
         <div className="row">
-          <div className="col=6 mx-auto">
+          <div className="col-6 mx-auto">
             <form onSubmit={SaveProduct}>
               <div className="form-group">
                 <label>Product Name</label>
@@ -47,6 +50,7 @@ const ProductForm = (props) => {
                   type="text"
                   className="form-control"
                   onChange={getProductName}
+                  value={productName}
                 />
               </div>
 
@@ -56,6 +60,7 @@ const ProductForm = (props) => {
                   type="text"
                   className="form-control"
                   onChange={getProductPrice}
+                  value={productPrice}
                 />
               </div>
               <div className="form-group">
