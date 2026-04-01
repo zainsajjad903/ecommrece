@@ -1,43 +1,35 @@
 import { useState } from "react";
 
 const ProductForm = (props) => {
-  let [productName, updateProductName] = useState("");
-  let [productPrice, updateProductPrice] = useState("");
-  let [productImage, updateProductImage] = useState("");
+  let [productName, updateName] = useState("");
+  let [productPrice, updatePrice] = useState("");
+  let [productImage, updateImage] = useState("");
 
   function getProductName(event) {
-    updateProductName(event.target.value);
+    updateName(event.target.value);
   }
 
   function getProductPrice(event) {
-    updateProductPrice(event.target.value);
+    updatePrice(event.target.value);
   }
 
   function getProductImage(event) {
-    const file = event.target.files && event.target.files[0];
-    if (file) {
-      updateProductImage(URL.createObjectURL(file));
-    }
+    updateImage(event.target.value);
   }
 
   function SaveProduct(event) {
     event.preventDefault();
 
-    const productItem = {
-      productId: Date.now(),
-      productName,
-      productPrice,
-      productImage,
+    let Product = {
+      productId: 1,
+      productName: productName,
+      productPrice: productPrice,
+      productImage: productImage,
     };
 
-    if (props.fetchProduct) {
-      props.fetchProduct(productItem);
-    }
-
-    updateProductName("");
-    updateProductPrice("");
-    updateProductImage("");
+    props.getProduct(Product);
   }
+
   return (
     <>
       <div className="container">
