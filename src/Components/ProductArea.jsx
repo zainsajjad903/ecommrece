@@ -1,7 +1,7 @@
 import ProductItem from "./Productitem";
 
 const ProductArea = (props) => {
-  console.log(props.newProduct);
+  console.log(props.productInfo);
   return (
     <section className="section" id="products">
       <div className="container">

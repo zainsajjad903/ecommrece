@@ -21,13 +21,14 @@ const ProductForm = (props) => {
     event.preventDefault();
 
     let Product = {
-      productId: 1,
+      productId: Date.now(),
       productName: productName,
       productPrice: productPrice,
       productImage: productImage,
     };
 
     props.getProduct(Product);
+    console.log(Product);
   }
 
   return (
