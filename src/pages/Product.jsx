@@ -28,19 +28,35 @@ let Item = [
 
 const Product = () => {
   let [productInfo, updateInfo] = useState(Item);
+  let [filterValue, setFilterValue] = useState("all");
 
   function onCreateProduct(product) {
     updateInfo((prev) => [product, ...prev]);
-    // product.productId = Item.length + 1;
-    // updateInfo([product, ...Item]);
+  }
+
+  function filterProduct(value) {
+    setFilterValue(value);
+  }
+
+  let filteredProducts = productInfo;
+  if (filterValue === "available") {
+    filteredProducts = productInfo.filter(
+      (prod) => prod.productstatus === true,
+    );
+  } else if (filterValue === "unavailable") {
+    filteredProducts = productInfo.filter(
+      (prod) => prod.productstatus === false,
+    );
   }
 
   return (
     <>
       <Navbar />
-      <ProductArea productInfo={productInfo} />
+      <ProductArea
+        productInfo={filteredProducts}
+        filterProduct={filterProduct}
+      />
       <AddProduct onCreateProduct={onCreateProduct} />
-
       <Footer />
     </>
   );

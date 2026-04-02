@@ -4,7 +4,7 @@ const Filterproduct = (props) => {
   }
   return (
     <>
-      <select name="filter product" id="" onClick={getvalue}>
+      <select name="filter product" id="" onChange={getvalue}>
         <option value="all">all</option>
         <option value="available">available</option>
         <option value="unavailable">unavailable</option>

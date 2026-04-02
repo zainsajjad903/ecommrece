@@ -10,7 +10,7 @@ const ProductArea = (props) => {
             <div className="section-heading">
               <h2>Our Latest Products</h2>
               <span>Check out all of our products.</span>
-              <Filterproduct />
+              <Filterproduct filterProduct={props.filterProduct} />
             </div>
           </div>
         </div>
