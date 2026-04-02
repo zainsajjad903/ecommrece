@@ -41,11 +41,11 @@ const Product = () => {
   let filteredProducts = productInfo;
   if (filterValue === "available") {
     filteredProducts = productInfo.filter(
-      (prod) => prod.productstatus === true,
+      (product) => product.productstatus === true,
     );
   } else if (filterValue === "unavailable") {
     filteredProducts = productInfo.filter(
-      (prod) => prod.productstatus === false,
+      (product) => product.productstatus === false,
     );
   }
 
