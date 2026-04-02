@@ -1,5 +1,5 @@
 import ProductItem from "./Productitem";
-
+import Filterproduct from "./Filterproduct";
 const ProductArea = (props) => {
   console.log(props.productInfo);
   return (
@@ -10,6 +10,7 @@ const ProductArea = (props) => {
             <div className="section-heading">
               <h2>Our Latest Products</h2>
               <span>Check out all of our products.</span>
+              <Filterproduct />
             </div>
           </div>
         </div>

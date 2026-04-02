@@ -4,7 +4,7 @@ const ProductForm = (props) => {
   let [productName, updateName] = useState("");
   let [productPrice, updatePrice] = useState("");
   let [productImage, updateImage] = useState("");
-  let [productstatus, updateStatus] = useState("");
+  let [productstatus, updateStatus] = useState("false");
   function getProductName(event) {
     updateName(event.target.value);
   }
@@ -17,11 +17,12 @@ const ProductForm = (props) => {
     updateImage(event.target.value);
   }
   function getProductstatus(event) {
-    updateStatus(event.target.value);
+    updateStatus(event.target.checked);
   }
 
   function SaveProduct(event) {
     event.preventDefault();
+    console.log(productstatus);
 
     let Product = {
       productId: Date.now(),
@@ -77,6 +78,7 @@ const ProductForm = (props) => {
                 <input
                   type="checkbox"
                   className="form-control"
+                  checked={productstatus}
                   onChange={getProductstatus}
                   value={productstatus}
                 />

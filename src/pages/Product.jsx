@@ -34,11 +34,13 @@ const Product = () => {
     // product.productId = Item.length + 1;
     // updateInfo([product, ...Item]);
   }
+
   return (
     <>
       <Navbar />
       <ProductArea productInfo={productInfo} />
       <AddProduct onCreateProduct={onCreateProduct} />
+
       <Footer />
     </>
   );
