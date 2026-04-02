@@ -68,6 +68,7 @@ const Product = () => {
   let [productInfo, updateInfo] = useState(Item);
 
   function onCreateProduct(product) {
+    product.productId = Item.length + 1;
     updateInfo([product, ...Item]);
   }
   return (

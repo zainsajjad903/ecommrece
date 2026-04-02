@@ -1,8 +1,9 @@
 import Footer from "../Components/Footer";
-
+import Fourty_plus from "../Components/fourtyplus";
 const Home = () => {
   return (
     <>
+      <Fourty_plus />
       <header class="header-area header-sticky">
         <div class="container">
           <div class="row">
